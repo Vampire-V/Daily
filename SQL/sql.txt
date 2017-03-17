@@ -1,0 +1,20 @@
+SELECT DISTINCT
+(select count(t_by) from tbtransaction where t_by = 'Y' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-01') as Y1701,
+(select count(t_by) from tbtransaction where t_by = 'N' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-01') as N1701,
+
+(select count(t_by) from tbtransaction where t_by = 'Y' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-02') as Y1702,
+(select count(t_by) from tbtransaction where t_by = 'N' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-02') as N1702,
+
+(select count(t_by) from tbtransaction where t_by = 'Y' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-03') as Y1703,
+(select count(t_by) from tbtransaction where t_by = 'N' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-03') as N1703,
+
+(select count(t_by) from tbtransaction where t_by = 'Y' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-04') as Y1704,
+(select count(t_by) from tbtransaction where t_by = 'N' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-04') as N1704,
+
+(select count(t_by) from tbtransaction where t_by = 'Y' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-05') as Y1705,
+(select count(t_by) from tbtransaction where t_by = 'N' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-05') as N1705,
+
+(select count(t_by) from tbtransaction where t_by = 'Y' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-06') as Y1706,
+(select count(t_by) from tbtransaction where t_by = 'N' and DATE_FORMAT(t_createday, '%Y-%m') = '2017-06') as N1706
+
+FROM tbtransaction
