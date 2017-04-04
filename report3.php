@@ -27,7 +27,7 @@ $sDate = $_REQUEST['sDate'];
  .style3 {
   font-family: "TH SarabunPSK";
   font-size: 16pt;
-  
+
  }
  .style5 {cursor: hand; font-weight: normal; color: #000000;}
  .style9 {font-family: Tahoma; font-size: 12px; }
@@ -49,8 +49,8 @@ $sDate = $_REQUEST['sDate'];
   </table>
 <table width="100%"><tr><td>Date: <?echo $sDate;?></td><td align="right">Created by: <?echo $_SESSION["u_name"];?></td></tr></table>
 
-  
-<?php 
+
+<?php
   $sqlq = "SELECT * from tbtransaction where tbtransaction.t_createday ='$sDate'";
   $query1 = mysqli_query($con,$sqlq) ;
   $objResult = mysqli_fetch_array($query1);
@@ -65,7 +65,7 @@ if($objResult['t_createday'])//เช็คตาราง t_createday
         <th>No.</th>
         <th>Description</th>
         <th>By</th>
-        <th>Detail if Not OK</th>        
+        <th>Detail if Not OK</th>
   </tr>
 
 <?php
@@ -76,7 +76,7 @@ if($objResult['t_createday'])//เช็คตาราง t_createday
           while($qp=@mysqli_fetch_array($rows)){
         $tbtran1 = "SELECT * FROM tbitem WHERE g_id = '".$qp['g_id']."' ";
         $rows1=@mysqli_query($con,$tbtran1);
-        
+
       ?>
 
 <tr bgcolor="#CC9900">
@@ -87,8 +87,8 @@ if($objResult['t_createday'])//เช็คตาราง t_createday
       </tr>
 <?php
 
-        while($qp1=@mysqli_fetch_array($rows1)){  
-            
+        while($qp1=@mysqli_fetch_array($rows1)){
+
         ?>
 
 <tr>
@@ -100,24 +100,24 @@ if($objResult['t_createday'])//เช็คตาราง t_createday
         <?
           $sqlq4 = "SELECT * from tbtransaction where i_id = '".$qp1['i_name']."' and t_createday = '".$_REQUEST['sDate']."' " ;
            $query14 = mysqli_query($con,$sqlq4) ;
-          
-           while($qp34=mysqli_fetch_array($query14)){ 
-          
 
-        ?>  
+           while($qp34=mysqli_fetch_array($query14)){
+
+
+        ?>
     <td align="center">
-        <?          
+        <?
           if( $qp34["t_by"] == 'Y' ){
         ?>
-              yes      
+              yes
         <?
           }else if( $qp34["t_by"] == 'N' ){
         ?>
-              no               
+              no
         <?
-          }else {       
+          }else {
         ?>
-              -             
+              -
         <?
           }
         ?>
@@ -126,14 +126,14 @@ if($objResult['t_createday'])//เช็คตาราง t_createday
     <td align="center">
 
           <?=$qp34['t_detail']; ?>
-        
+
      </td>
     <? $run++; } ?>
 
           </tr>
-        
-         <?  
-          } } 
+
+         <?
+          } }
          ?>
   </table>
 <table  width="100%" border="1"  cellspacing="0" cellpadding="0">
@@ -144,7 +144,7 @@ if($objResult['t_createday'])//เช็คตาราง t_createday
   </table><br>
 <p align="right"> Approved By: .....................................................................</p>
     <p align="right">Date: .....................................................................</p>
-    
+
 <table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td>
     <font size="1">M-CPP-IT-F008</font></td><td align="right">
     <font size="1" >v.1 Effective on january 1, 2016</font></td></tr></table>
@@ -155,7 +155,7 @@ if($objResult['t_createday'])//เช็คตาราง t_createday
  ?>
  <?  //echo  "" ;
  }
- ?>    
+ ?>
 </body>
 </html>
 <?Php
@@ -166,4 +166,4 @@ $pdf->SetAutoFont();
 $pdf->SetDisplayMode('fullpage');
 $pdf->WriteHTML($html, 2);
 $pdf->Output();
-?>     
+?>

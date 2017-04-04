@@ -56,43 +56,43 @@ $objPHPExcel->getProperties()->setCreator("Maarten Balliauw")
 							 ->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.")
 							 ->setKeywords("office 2007 openxml php")
 							 ->setCategory("Test result file");
-							 
+
 // Add some data header
 //echo date('H:i:s') . " Add some data\n";
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'ID')
+
             ->setCellValue('B1', 'GROUP')
             ->setCellValue('C1', 'ITEM')
-			->setCellValue('D1', 'CHECK')
-			->setCellValue('E1', 'DETAIL')
-			->setCellValue('F1', 'CREATEDAY');
+						->setCellValue('D1', 'CHECK')
+						->setCellValue('E1', 'DETAIL')
+						->setCellValue('F1', 'CREATEDAY');
 			//->setCellValue('F1', 'STATUS')
-			
-			
-           
+
+
+
 
 				$sDate = $_REQUEST['sDate'];
-				
+
 
 				//Echo $sDate;
-// Config search filter			
+// Config search filter
 $strSQL= "SELECT*FROM tbtransaction WHERE tbtransaction.t_createday ='$sDate' ";
-				
- 							 
+
+
 //Query SQL
 $objQuery = mysqli_query($con,$strSQL);
 $i=2;
 while($result = mysqli_fetch_array($objQuery))
 {
 
-	
-	$objPHPExcel->getActiveSheet()->setCellValue('A' . $i, $result["t_id"]);
+
+
 	$objPHPExcel->getActiveSheet()->setCellValue('B' . $i, $result["g_id"]);
 	$objPHPExcel->getActiveSheet()->setCellValue('C' . $i, $result["i_id"]);
 	$objPHPExcel->getActiveSheet()->setCellValue('D' . $i, $result["t_by"]);
 	$objPHPExcel->getActiveSheet()->setCellValue('E' . $i, $result["t_detail"]);
 	$objPHPExcel->getActiveSheet()->setCellValue('F' . $i, $result["t_createday"]);
-	
+
 	$i++;
 }
 

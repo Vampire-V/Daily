@@ -10,7 +10,6 @@ require_once("conn.php");
   echo json_encode($row);//ส่งค่ากลับเป็น json
 /*
   $edit="update tbgroup set g_name='$gname' where g_id='$id'";
-
   if (mysqli_query($con,$edit)) {
     echo "Complete";
   }

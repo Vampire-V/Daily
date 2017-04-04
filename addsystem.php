@@ -11,7 +11,6 @@
         <?
         exit();
     }
-
     if($_SESSION['status'] != "ADMIN")
     {
         ?>
@@ -20,10 +19,8 @@
             window.location="table2.php";
         </script>
         <?
-
         exit();
     }
-
 ?>
 
 <html>
@@ -42,7 +39,6 @@ alert('Please in put Group!!');
 document.addgroup.gname.focus();
 return false; }
 document.addgroup.submit();}
-
 function checkvalidate2(){
   if (document.addsystem.sname.value == ""){
   alert('Please in put System!!');
@@ -162,9 +158,7 @@ function checkvalidate2(){
 
  <?php $tbitem = "SELECT * FROM tbitem ";
       $rows=@mysqli_query($con,$tbitem);
-
     while ($num1=mysqli_fetch_array($rows)) {
-
  ?>
       <tr>
       <td align="left"><? echo $num1["i_id"]; ?></td>
@@ -223,11 +217,10 @@ $('.edit_data2').click(function(){
       $('#g_check').val("Update System");
       $('#insert').val("Update System");
       $('#editModal').modal('show');
-      location.reload();
+      //location.reload();
     }
   });
 });
-
 $('.delete_data').click(function(){
   var uid=$(this).attr('id');
   var status=confirm('Are you delete!');//ถามสถานะว่า ลบ/ไม่ลบ
@@ -242,7 +235,6 @@ $('.delete_data').click(function(){
   });
   }
 });
-
 $('.delete_data2').click(function(){
   var uid=$(this).attr('id');
   var status=confirm('Are you delete!');

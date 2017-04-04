@@ -25,7 +25,7 @@ require "sqlforcharts.php";
     dataFormat: 'json',
     dataSource: {
         "chart": {
-            "caption": "Daily Check Sheet Chart",
+            "caption": "Daily Check Sheet Chart <?php echo $name;?> ",
             "xAxisname": "Quarter",
             "yAxisName": "Num (In Daily)",
             "numberPrefix": "",
@@ -163,11 +163,6 @@ for($i=0; $i<=10; $i++) {?>
 <?PHP }?>
 </select>
 		<input name="btnSubmit" type="submit" value="Submit" class="btn btn-success btn-sm">
-    <?php if($name){
-          ?><option value="<?php echo $name;?>"><?php echo $name;?></option><?php
-        }else{
-          ?><option value="">--Select Years--</option><?php
-        }?>
 	</form></div></center>
 
 

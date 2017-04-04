@@ -5,8 +5,8 @@
 
 	session_destroy();
 	?><script language="javascript">
-			alert(" ออกจากระบบแล้ว");
+			alert("Sign out Complete");
 			window.location="login.php";
 	</script><?
-	
+
 ?>
