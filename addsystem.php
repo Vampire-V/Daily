@@ -5,7 +5,7 @@
     {
         ?>
         <script language="javascript">
-            alert("กรุณา Login ก่อน");
+            alert("Please Login");
             window.location="login.php";
         </script>
         <?
@@ -15,7 +15,7 @@
     {
         ?>
         <script language="javascript">
-            alert("คุณไม่มีสิทธิ์");
+            alert("You do not have the right!!!");
             window.location="table2.php";
         </script>
         <?

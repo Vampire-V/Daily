@@ -25,7 +25,7 @@ require "sqlforcharts.php";
     dataFormat: 'json',
     dataSource: {
         "chart": {
-            "caption": "Daily Check Sheet Chart <?php echo $name;?> ",
+            "caption": "Daily Check Sheet Chart <?php echo $year;?> ",
             "xAxisname": "Quarter",
             "yAxisName": "Num (In Daily)",
             "numberPrefix": "",

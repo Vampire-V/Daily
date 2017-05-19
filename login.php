@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Daily Check Sheet</title>
-    <link rel="shortcut icon" href="img/shortcut.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/shortcut.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -38,6 +38,6 @@
       </div>
       <h3><marquee direction="right"><font color='red'>ระบบนี้รองรับการแสดงผลกับ Browser Chrome</font></marquee></h3>
     </div>
-  </form>  
+  </form>
 </body>
 </html>
